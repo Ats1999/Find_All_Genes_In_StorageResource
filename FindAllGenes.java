@@ -16,7 +16,7 @@ public class FindingGene {
 //		I added this line
 		beginIndex = dna.indexOf("ATG", beginIndex);
 		if(beginIndex==-1) {
-//			System.out.printf("Starting codon: %s is not found!\n", startCodon);
+//		System.out.printf("Starting codon: %s is not found!\n", startCodon);
 			return "";
 		}
 		
@@ -52,6 +52,7 @@ public class FindingGene {
 	}
 	
 	public static int findStopCodon(String dna, int beginIndex, String stopCodon) {
+		
 		int endIndex = dna.indexOf(stopCodon, beginIndex+3);
 		
 		while(endIndex!=-1) {
@@ -138,8 +139,6 @@ public class FindingGene {
 		int count = 0;
 		System.out.printf("Testing printAllGenes on: %s\n", dna);
 		
-//		System.out.printf("string length: %d\n", dna.length());
-		
 		if(dna.isEmpty())
 			return 0;
 		
@@ -150,13 +149,11 @@ public class FindingGene {
 		while(true) {
 			
 			currentGene = findGene(dna, beginIndex);
-
 			if(currentGene.isEmpty())
 				break;
 			
-//  	System.out.printf("The current found gene is: %s\n", currentGene);
+//  			System.out.printf("The current found gene is: %s\n", currentGene);
 			count++;
-      
 			beginIndex = dna.indexOf(currentGene, beginIndex) + currentGene.length();
 		}
 	
@@ -181,15 +178,15 @@ public class FindingGene {
 
 		int beginIndex = 0;		
     
-    String currentGene;
+    		String currentGene;
 					
 		while(true) {
 						
-		  currentGene = findGene(dna, beginIndex);
+		  	currentGene = findGene(dna, beginIndex);
 			if(currentGene.isEmpty())
 					break;
 						
-//				System.out.printf("The current found gene is: %s\n", currentGene);
+//			System.out.printf("The current found gene is: %s\n", currentGene);
 			geneList.add(currentGene);
 						
 			beginIndex = dna.indexOf(currentGene, beginIndex) + currentGene.length();
