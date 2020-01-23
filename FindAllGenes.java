@@ -1,5 +1,8 @@
 import edu.duke.*;
 
+// file to test the code on: https://users.cs.duke.edu/~rodger/GRch38dnapart.fa
+//download the file first
+
 public class FindingGene {
 
 	public static void main(String[] args) {
@@ -294,7 +297,7 @@ public class FindingGene {
 	
 	public static void testProcessGenes() {
 
-    FileResource fr = new FileResource();
+    		FileResource fr = new FileResource();
 		String dna = fr.asString();
 
 		StorageResource sr = getAllGenes(dna);
